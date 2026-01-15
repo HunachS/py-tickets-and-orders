@@ -88,7 +88,6 @@ class Ticket(models.Model):
                 f"{self.movie_session.show_time.strftime('%Y-%m-%d %H:%M:%S')}"
                 f" (row: {self.row}, seat: {self.seat})>")
 
-
     def clean(self) -> None:
         cinema_hall = self.movie_session.cinema_hall
         if not (1 <= self.row <= cinema_hall.rows):
